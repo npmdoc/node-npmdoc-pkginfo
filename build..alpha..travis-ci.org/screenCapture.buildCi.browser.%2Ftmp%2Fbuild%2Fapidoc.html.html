@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/indexzero/node-pkginfo#readme"
-
-    >pkginfo (v0.4.0)</a>
+    <a href="https://github.com/indexzero/node-pkginfo#readme">pkginfo (v0.4.0)</a>
 </h1>
 <h4>An easy way to expose properties on a module from a package.json</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.pkginfo">module pkginfo</a><ol>
 
@@ -148,7 +141,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">pkginfo = function (pmodule, options) {
   var args = [].slice.call(arguments, 2).filter(function (arg) {
-    return typeof arg === &#x27;string&#x27;;
+    return typeof arg === 'string';
   });
 
   //
@@ -162,7 +155,7 @@
     //
     options = { include: options };
   }
-  else if (typeof options === &#x27;string&#x27;) {
+  else if (typeof options === 'string') {
     //
     // Otherwise if the first argument is a string, then
     // assume that it is the first property to expose from
@@ -179,7 +172,7 @@
   // ensure that includes have been defined
   options.include = options.include || [];
 
-  if (args.length &#x3e; 0) {
+  if (args.length &gt; 0) {
     //
     // If additional string arguments have been passed in
     // then add them to the properties to expose on the
@@ -190,7 +183,7 @@
 
   var pkg = pkginfo.read(pmodule, options.dir).package;
   Object.keys(pkg).forEach(function (key) {
-    if (options.include.length &#x3e; 0 &#x26;&#x26; !~options.include.indexOf(key)) {
+    if (options.include.length &gt; 0 &amp;&amp; !~options.include.indexOf(key)) {
       return;
     }
 
@@ -218,17 +211,17 @@
     dir = path.dirname(pmodule.filename || pmodule.id);
   }
 
-  if (dir === &#x27;/&#x27;) {
-    throw new Error(&#x27;Could not find package.json up from &#x27; +
+  if (dir === '/') {
+    throw new Error('Could not find package.json up from ' +
                 (pmodule.filename || pmodule.id));
   }
-  else if (!dir || dir === &#x27;.&#x27;) {
-    throw new Error(&#x27;Cannot find package.json from unspecified directory&#x27;);
+  else if (!dir || dir === '.') {
+    throw new Error('Cannot find package.json from unspecified directory');
   }
 
   var contents;
   try {
-    contents = require(dir + &#x27;/package.json&#x27;);
+    contents = require(dir + '/package.json');
   } catch (error) {}
 
   if (contents) return contents;
@@ -274,7 +267,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">pkginfo = function (pmodule, options) {
   var args = [].slice.call(arguments, 2).filter(function (arg) {
-    return typeof arg === &#x27;string&#x27;;
+    return typeof arg === 'string';
   });
 
   //
@@ -288,7 +281,7 @@
     //
     options = { include: options };
   }
-  else if (typeof options === &#x27;string&#x27;) {
+  else if (typeof options === 'string') {
     //
     // Otherwise if the first argument is a string, then
     // assume that it is the first property to expose from
@@ -305,7 +298,7 @@
   // ensure that includes have been defined
   options.include = options.include || [];
 
-  if (args.length &#x3e; 0) {
+  if (args.length &gt; 0) {
     //
     // If additional string arguments have been passed in
     // then add them to the properties to expose on the
@@ -316,7 +309,7 @@
 
   var pkg = pkginfo.read(pmodule, options.dir).package;
   Object.keys(pkg).forEach(function (key) {
-    if (options.include.length &#x3e; 0 &#x26;&#x26; !~options.include.indexOf(key)) {
+    if (options.include.length &gt; 0 &amp;&amp; !~options.include.indexOf(key)) {
       return;
     }
 
@@ -344,17 +337,17 @@
     dir = path.dirname(pmodule.filename || pmodule.id);
   }
 
-  if (dir === &#x27;/&#x27;) {
-    throw new Error(&#x27;Could not find package.json up from &#x27; +
+  if (dir === '/') {
+    throw new Error('Could not find package.json up from ' +
                 (pmodule.filename || pmodule.id));
   }
-  else if (!dir || dir === &#x27;.&#x27;) {
-    throw new Error(&#x27;Cannot find package.json from unspecified directory&#x27;);
+  else if (!dir || dir === '.') {
+    throw new Error('Cannot find package.json from unspecified directory');
   }
 
   var contents;
   try {
-    contents = require(dir + &#x27;/package.json&#x27;);
+    contents = require(dir + '/package.json');
   } catch (error) {}
 
   if (contents) return contents;
@@ -393,3 +386,4 @@
     ]
 </div>
 </div>
+</body></html>

@@ -1,21 +1,21 @@
 <svg height="286" width="720" xmlns="http://www.w3.org/2000/svg">
 <rect height="286" fill="#555" width="720"></rect>
 <text fill="#7f7" font-family="Courier New" font-size="12" xml:space="preserve">
-<tspan x="10" y="26">  0.  2017-04-07 09:26:18 +0000    37972 bytes  .</tspan>
-<tspan x="10" y="42">  1.  2017-04-07 09:26:18 +0000     1059 bytes  LICENSE</tspan>
-<tspan x="10" y="58">  2.  2017-04-07 09:26:18 +0000     2049 bytes  README.md</tspan>
-<tspan x="10" y="74">  3.  2017-04-07 09:26:18 +0000     7235 bytes  docs/docco.css</tspan>
-<tspan x="10" y="90">  4.  2017-04-07 09:26:18 +0000    15854 bytes  docs/pkginfo.html</tspan>
-<tspan x="10" y="106">  5.  2017-04-07 09:26:18 +0000      440 bytes  examples/all-properties.js</tspan>
-<tspan x="10" y="122">  6.  2017-04-07 09:26:18 +0000      520 bytes  examples/array-argument.js</tspan>
-<tspan x="10" y="138">  7.  2017-04-07 09:26:18 +0000      472 bytes  examples/multiple-properties.js</tspan>
-<tspan x="10" y="154">  8.  2017-04-07 09:26:18 +0000      546 bytes  examples/object-argument.js</tspan>
-<tspan x="10" y="170">  9.  2017-04-07 09:26:18 +0000      306 bytes  examples/package.json</tspan>
-<tspan x="10" y="186"> 10.  2017-04-07 09:26:18 +0000      467 bytes  examples/single-property.js</tspan>
-<tspan x="10" y="202"> 11.  2017-04-07 09:26:18 +0000      337 bytes  examples/subdir/package.json</tspan>
-<tspan x="10" y="218"> 12.  2017-04-07 09:26:18 +0000      523 bytes  examples/target-dir.js</tspan>
-<tspan x="10" y="234"> 13.  2017-04-07 09:26:18 +0000     3522 bytes  lib/pkginfo.js</tspan>
-<tspan x="10" y="250"> 14.  2017-04-07 09:26:18 +0000     2332 bytes  package.json</tspan>
-<tspan x="10" y="266"> 15.  2017-04-07 09:26:18 +0000     2310 bytes  test/pkginfo-test.js</tspan>
+<tspan x="10" y="26">  0.  2017-04-19 17:07:00 +0000    37972 bytes  .</tspan>
+<tspan x="10" y="42">  1.  2017-04-19 17:07:00 +0000     1059 bytes  LICENSE</tspan>
+<tspan x="10" y="58">  2.  2017-04-19 17:07:00 +0000     2049 bytes  README.md</tspan>
+<tspan x="10" y="74">  3.  2017-04-19 17:07:00 +0000     7235 bytes  docs/docco.css</tspan>
+<tspan x="10" y="90">  4.  2017-04-19 17:07:00 +0000    15854 bytes  docs/pkginfo.html</tspan>
+<tspan x="10" y="106">  5.  2017-04-19 17:07:00 +0000      440 bytes  examples/all-properties.js</tspan>
+<tspan x="10" y="122">  6.  2017-04-19 17:07:00 +0000      520 bytes  examples/array-argument.js</tspan>
+<tspan x="10" y="138">  7.  2017-04-19 17:07:00 +0000      472 bytes  examples/multiple-properties.js</tspan>
+<tspan x="10" y="154">  8.  2017-04-19 17:07:00 +0000      546 bytes  examples/object-argument.js</tspan>
+<tspan x="10" y="170">  9.  2017-04-19 17:07:00 +0000      306 bytes  examples/package.json</tspan>
+<tspan x="10" y="186"> 10.  2017-04-19 17:07:00 +0000      467 bytes  examples/single-property.js</tspan>
+<tspan x="10" y="202"> 11.  2017-04-19 17:07:00 +0000      337 bytes  examples/subdir/package.json</tspan>
+<tspan x="10" y="218"> 12.  2017-04-19 17:07:00 +0000      523 bytes  examples/target-dir.js</tspan>
+<tspan x="10" y="234"> 13.  2017-04-19 17:07:00 +0000     3522 bytes  lib/pkginfo.js</tspan>
+<tspan x="10" y="250"> 14.  2017-04-19 17:07:00 +0000     2332 bytes  package.json</tspan>
+<tspan x="10" y="266"> 15.  2017-04-19 17:07:00 +0000     2310 bytes  test/pkginfo-test.js</tspan>
 </text>
 </svg>
