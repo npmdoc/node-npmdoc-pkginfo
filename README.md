@@ -1,6 +1,6 @@
 # npmdoc-pkginfo
 
-#### api documentation for  [pkginfo (v0.4.0)](https://github.com/indexzero/node-pkginfo#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-pkginfo.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-pkginfo) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-pkginfo.svg)](https://travis-ci.org/npmdoc/node-npmdoc-pkginfo)
+#### basic api documentation for  [pkginfo (v0.4.0)](https://github.com/indexzero/node-pkginfo#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-pkginfo.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-pkginfo) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-pkginfo.svg)](https://travis-ci.org/npmdoc/node-npmdoc-pkginfo)
 
 #### An easy way to expose properties on a module from a package.json
 
@@ -63,7 +63,8 @@
     "scripts": {
         "test": "vows test/*-test.js --spec"
     },
-    "version": "0.4.0"
+    "version": "0.4.0",
+    "bin": {}
 }
 ```
 
