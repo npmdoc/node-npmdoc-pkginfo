@@ -89,43 +89,6 @@
 
     </ol></li>
 
-    <li class="apidocModuleLi"><a href="#apidoc.module.pkginfo.pkginfo">module pkginfo.pkginfo</a><ol>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.pkginfo.pkginfo.pkginfo">
-            function <span class="apidocSignatureSpan">pkginfo.</span>pkginfo
-            <span class="apidocSignatureSpan">(pmodule, options)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.pkginfo.pkginfo.find">
-            function <span class="apidocSignatureSpan">pkginfo.pkginfo.</span>find
-            <span class="apidocSignatureSpan">(pmodule, dir)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <a class="apidocElementLiA" href="#apidoc.element.pkginfo.pkginfo.read">
-            function <span class="apidocSignatureSpan">pkginfo.pkginfo.</span>read
-            <span class="apidocSignatureSpan">(pmodule, dir)</span>
-            </a>
-
-        </li>
-
-        <li>
-
-            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">pkginfo.pkginfo.</span>version</span>
-
-        </li>
-
-    </ol></li>
-
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -228,7 +191,23 @@
 
   return pkginfo.find(pmodule, path.dirname(dir));
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  var contents;
+  try {
+    contents = require(dir + '/package.json');
+  } catch (error) {}
+
+  if (contents) return contents;
+
+  return pkginfo.<span class="apidocCodeKeywordSpan">find</span>(pmodule, path.dirname(dir));
+};
+
+//
+// ### function read (pmodule, dir)
+// #### @pmodule {Module} Parent module to read from.
+// #### @dir {string} **Optional** Directory to start search from.
+// Searches up the directory tree from `dir` until it finds a directory
+...</pre></li>
     </ul>
 
 
@@ -246,133 +225,23 @@
     package: pkginfo.find(pmodule, dir),
   };
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-
-</div>
-
-<div class="apidocSectionDiv">
-<h1><a href="#apidoc.module.pkginfo.pkginfo" id="apidoc.module.pkginfo.pkginfo">module pkginfo.pkginfo</a></h1>
-
-
-    <h2>
-        <a href="#apidoc.element.pkginfo.pkginfo.pkginfo" id="apidoc.element.pkginfo.pkginfo.pkginfo">
-        function <span class="apidocSignatureSpan">pkginfo.</span>pkginfo
-        <span class="apidocSignatureSpan">(pmodule, options)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">pkginfo = function (pmodule, options) {
-  var args = [].slice.call(arguments, 2).filter(function (arg) {
-    return typeof arg === 'string';
-  });
-
-  //
-  // **Parse variable arguments**
-  //
-  if (Array.isArray(options)) {
-    //
-    // If the options passed in is an Array assume that
-    // it is the Array of properties to expose from the
-    // on the package.json file on the parent module.
-    //
-    options = { include: options };
-  }
-  else if (typeof options === 'string') {
-    //
-    // Otherwise if the first argument is a string, then
-    // assume that it is the first property to expose from
-    // the package.json file on the parent module.
-    //
-    options = { include: [options] };
+    <li>example usage<pre class="apidocCodePre">...
+// If additional string arguments have been passed in
+// then add them to the properties to expose on the
+// parent module.
+//
+options.include = options.include.concat(args);
   }
 
-  //
-  // **Setup default options**
-  //
-  options = options || {};
-
-  // ensure that includes have been defined
-  options.include = options.include || [];
-
-  if (args.length &gt; 0) {
-    //
-    // If additional string arguments have been passed in
-    // then add them to the properties to expose on the
-    // parent module.
-    //
-    options.include = options.include.concat(args);
-  }
-
-  var pkg = pkginfo.read(pmodule, options.dir).package;
+  var pkg = pkginfo.<span class="apidocCodeKeywordSpan">read</span>(pmodule, options.dir).package;
   Object.keys(pkg).forEach(function (key) {
-    if (options.include.length &gt; 0 &amp;&amp; !~options.include.indexOf(key)) {
-      return;
-    }
+if (options.include.length &gt; 0 &amp;&amp; !~options.include.indexOf(key)) {
+  return;
+}
 
-    if (!pmodule.exports[key]) {
-      pmodule.exports[key] = pkg[key];
-    }
-  });
-
-  return pkginfo;
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.pkginfo.pkginfo.find" id="apidoc.element.pkginfo.pkginfo.find">
-        function <span class="apidocSignatureSpan">pkginfo.pkginfo.</span>find
-        <span class="apidocSignatureSpan">(pmodule, dir)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">find = function (pmodule, dir) {
-  if (! dir) {
-    dir = path.dirname(pmodule.filename || pmodule.id);
-  }
-
-  if (dir === '/') {
-    throw new Error('Could not find package.json up from ' +
-                (pmodule.filename || pmodule.id));
-  }
-  else if (!dir || dir === '.') {
-    throw new Error('Cannot find package.json from unspecified directory');
-  }
-
-  var contents;
-  try {
-    contents = require(dir + '/package.json');
-  } catch (error) {}
-
-  if (contents) return contents;
-
-  return pkginfo.find(pmodule, path.dirname(dir));
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
-    </ul>
-
-
-
-    <h2>
-        <a href="#apidoc.element.pkginfo.pkginfo.read" id="apidoc.element.pkginfo.pkginfo.read">
-        function <span class="apidocSignatureSpan">pkginfo.pkginfo.</span>read
-        <span class="apidocSignatureSpan">(pmodule, dir)</span>
-        </a>
-    </h2>
-    <ul>
-    <li>description and source-code<pre class="apidocCodePre">read = function (pmodule, dir) {
-  return {
-    dir: dir,
-    package: pkginfo.find(pmodule, dir),
-  };
-}</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+if (!pmodule.exports[key]) {
+  pmodule.exports[key] = pkg[key];
+...</pre></li>
     </ul>
 
 
